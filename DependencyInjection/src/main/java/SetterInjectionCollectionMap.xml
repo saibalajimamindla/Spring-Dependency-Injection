@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="answer1"
+		class="com.Spring.SetterInjection.Collectionmap.Answer">
+		<property name="id" value="01"></property>
+		<property name="answer" value="it is red"></property>
+		<property name="postedDate" value="08/04/2021"></property>
+	</bean>
+
+	<bean id="answer2"
+		class="com.Spring.SetterInjection.Collectionmap.Answer">
+		<property name="id" value="02"></property>
+		<property name="answer" value="it is tomato-red"></property>
+		<property name="postedDate" value="08/04/2021"></property>
+	</bean>
+
+	<bean id="user1"
+		class="com.Spring.SetterInjection.Collectionmap.User">
+		<property name="id" value="101"></property>
+		<property name="name" value="balaji"></property>
+		<property name="email" value="saibalaji@gmail.com"></property>
+	</bean>
+	
+	<bean id="user2"
+		class="com.Spring.SetterInjection.Collectionmap.User">
+		<property name="id" value="102"></property>
+		<property name="name" value="vishnu"></property>
+		<property name="email" value="vishnuvardhan@gmail.com"></property>
+	</bean>
+	
+	<bean id="q1" class="com.Spring.SetterInjection.Collectionmap.Question">
+	<property name="id" value="01"></property>
+	<property name="name" value="what is the colour of tomato"></property>
+	<property name="answers">
+	<map>
+	<entry key-ref="answer1" value-ref="user1"></entry>
+		<entry key-ref="answer2" value-ref="user2"></entry>
+	</map>
+	</property>
+	</bean>
+
+</beans>

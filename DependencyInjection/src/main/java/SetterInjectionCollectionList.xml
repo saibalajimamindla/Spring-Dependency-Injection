@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:p="http://www.springframework.org/schema/p"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean id="answer1"
+		class="com.Spring.SetterInjection.CollectionList.Answer">
+		<property name="id" value="01"></property>
+		<property name="name" value="it is black"></property>
+		<property name="by" value="balaji"></property>
+	</bean>
+	
+	<bean id="answer2"
+		class="com.Spring.SetterInjection.CollectionList.Answer">
+		<property name="id" value="02"></property>
+		<property name="name" value="it is grey"></property>
+		<property name="by" value="vishnu"></property>
+	</bean>
+	
+	<bean id="question" class="com.Spring.SetterInjection.CollectionList.Question" >
+	<property name="id" value="101"></property>
+	<property name="Question" value="what is the colour of mouse"></property>
+	<property name="answers">
+	<list>
+	<ref bean="answer1"/>
+	<ref bean="answer2"/>
+	</list>
+	</property>
+	</bean>
+
+</beans>

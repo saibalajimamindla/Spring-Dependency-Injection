@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans  xmlns="http://www.springframework.org/schema/beans"  
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xmlns:p="http://www.springframework.org/schema/p"  
+    xsi:schemaLocation="http://www.springframework.org/schema/beans  
+               http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">  
+
+  <bean id="adress" class="com.Spring.ConstructorInjection.Student.Adress">
+  <constructor-arg value="203" type="int"></constructor-arg>
+   <constructor-arg value="ramjinagar"></constructor-arg>
+    <constructor-arg value="more super market"></constructor-arg>
+     <constructor-arg value="524003"></constructor-arg>
+  </bean>
+  
+  <bean id="subject" class="com.Spring.ConstructorInjection.Student.Subjects">
+   <constructor-arg value="math"></constructor-arg>
+    <constructor-arg value="science"></constructor-arg>
+     <constructor-arg value="social"></constructor-arg>
+  </bean>
+  
+  
+  <bean id="student" class="com.Spring.ConstructorInjection.Student.Student" >
+   <constructor-arg value="1509" type="int"></constructor-arg>
+    <constructor-arg value="saibalaji"></constructor-arg>
+     <constructor-arg value="001"></constructor-arg>
+     <constructor-arg>
+     <ref bean="adress"/>
+     </constructor-arg>
+     <constructor-arg>
+     <ref bean="subject"/>
+     </constructor-arg>
+  
+  
+  </bean>
+</beans>
